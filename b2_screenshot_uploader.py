@@ -90,8 +90,6 @@ def run():
     if args.screen:
         take_screenshot(fullFile)
     
-    # downloadUrl = upload_to_b2(fullFile, B2_KEY_ID, B2_KEY)
-    # print(downloadUrl)
     uploadResults = bucket.upload_local_file(
         local_file=fullFile,
         file_name=fileName
