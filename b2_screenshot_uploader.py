@@ -62,8 +62,6 @@ def run():
         logging.error("File {screenshotFolder} doesn't exist!")
         exit(1)
     
-    today = date.today()
-
     # Initialize B2Api
     info = InMemoryAccountInfo()
     b2_api = B2Api(info)
@@ -94,6 +92,7 @@ def run():
         local_file=fullFile,
         file_name=fileName
     )
+    
     fileId = uploadResults.as_dict()['fileId']
     print(b2_api.get_download_url_for_file_name(B2_BUCKET_NAME, fileName))
 
