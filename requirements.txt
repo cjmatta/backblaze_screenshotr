@@ -10,3 +10,4 @@ requests==2.25.1
 six==1.15.0
 tqdm==4.56.2
 urllib3==1.26.3
+wonderwords==2.1.0
