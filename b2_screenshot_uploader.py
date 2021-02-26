@@ -8,6 +8,7 @@ import argparse
 from datetime import date
 from wonderwords import RandomWord
 from b2sdk.v1 import InMemoryAccountInfo, B2Api
+import random
 
 
 logging.basicConfig(level="INFO")
@@ -69,9 +70,10 @@ def run():
     bucket = b2_api.get_bucket_by_name(B2_BUCKET_NAME)
     # build random word string for filename
     r = RandomWord()
+    c = ["the", "my", "his", "her", "our", "their", "that", "this"]
     randwords = '-'.join([
         r.word(include_parts_of_speech=["verbs"]),
-        "the",
+        random.choice(c),
         r.word(include_parts_of_speech=["adjectives"]),
         r.word(include_parts_of_speech=["nouns"])
     ])
